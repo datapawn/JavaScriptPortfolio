@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Skeleton CSS cdn stuff -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/js-skeleton/3.6.3/skeleton.min.js"
-      integrity="sha512-TQZ8oAw8DKHbOSSvISytAJDhp9LbMHJr92ZYHRUZRSYGye3Oi/F6z0Ny41q38XEXBimOW7E5U1PPLjkX51FGqQ=="
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="assets/skeleton.css"></link>
     <!-- favicon -->
     <link
       rel="shortcut icon"
@@ -20,22 +16,46 @@
   </head>
   <body>
     <div class="container">
-      <h2>Primes of Three</h2>
-      <p>Enter a number to see if it is a Power of Three</p>
-      <div class="row">
-        <div class="eight columns">
-          <label for="exampleEmailInput">Your email</label>
-          <input
-            class="u-full-width"
-            type="email"
-            placeholder="test@mailbox.com"
-            id="exampleEmailInput"
-          />
+      <h2>Powers of Three</h2>
+      <p>This application will tell you if a number is a power of three.</p>
+      <form id="number-form">
+        <div class="row">
+          <!-- Enter field -->
+          <div class="u-full-width number-input">
+            <label for="numberinput">Enter a number: </label>
+            <input
+              id="num"
+              class="u-full-width"
+              type="number"
+              placeholder="integers only please"
+              min="1"
+            />
+          <!-- Test button -->
+          </div>
+          <input class="button-primary" type="submit" value="Check!">
         </div>
-        <div class="four columns">
-          <input class="button-primary" type="submit" value="Submit" />
+        <!-- X header -->
+        <div class="row">
+          <div class="u-full-width">
+            <h1>X</h1>
+          </div>
         </div>
-      </div>
+        <!-- Table of Tries -->
+        <table class="u-full-width">
+        <thead>
+          <tr>
+            <th>Number Guessed</th>
+            <th>Power of 3?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="guess">36</td>
+            <td class="guess">Nope</td>
+          </tr>
+        </tbody>
+      </table>
+      </form>
     </div>
     <script src="app.js"></script>
   </body>
