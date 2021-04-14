@@ -7,7 +7,7 @@
 
 // Define UI Vars
 const form = document.querySelector("#number-form");
-const num = document.querySelector("#num");
+const numberInput = document.querySelector("#numberinput");
 
 // load event listeners
 function loadEventListeners() {
@@ -16,23 +16,44 @@ function loadEventListeners() {
 }
 
 loadEventListeners();
-let checker = num.value;
-parseInt(checker);
-//console.log(typeof checker);
-console.log(checker);
 
-// f() check number that the user inputs:
+// f() checkNum - check number that the user inputs:
 function checkNum(e) {
-  if (num.value === "") {
-    alert("Type and Integer to test");
-  } else if (isNaN(num.value)) {
-    alert("Integers only please");
+  if (numberInput.value === "") {
+    alert("Type any Integer to test if it's a power of 3");
   } else {
-    console.log("isinteger");
-    e.preventDefault();
+    //console.log("isinteger");
+    //listNums(numberInput.value);
+    if (threePower(1, numberInput.value)) {
+      console.log("true");
+      //showNumber(True, numberInput.value);
+    } else {
+      console.log("false");
+      //showNumber(False, numberInput.value);
+    }
   }
 }
 
+// f() threePower - check that number is a power of 3:
+function threePower(step, guess) {
+  if (guess < 3) {
+    return false;
+  } else if (guess == Math.pow(3, step)) {
+    return true;
+  } else if (guess > Math.pow(3, step)) {
+    step += 1;
+    return threePower(step, guess);
+  } else if (guess < Math.pow(3, step)) {
+    return false;
+  }
+}
+
+// f() showNumber - takes in T/F if it is or is not threePower - displays accordingly:
+// function showNumber(isPower, guess) {
+//   if
+// }
+
+// f() listNums - displays the recent 3 guesses you've done:
 function listNums() {
   // Create td element
   const td = document.createElement("td");

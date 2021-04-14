@@ -18,43 +18,48 @@
     <div class="container">
       <h2>Powers of Three</h2>
       <p>This application will tell you if a number is a power of three.</p>
+      <!-- NUMBER FORM -->
       <form id="number-form">
         <div class="row">
           <!-- Enter field -->
-          <div class="u-full-width number-input">
+          <div class="six columns">
             <label for="numberinput">Enter a number: </label>
             <input
-              id="num"
+              id="numberinput"
               class="u-full-width"
               type="number"
               placeholder="integers only please"
               min="1"
             />
-          <!-- Test button -->
           </div>
+        </div>
+        <div class="row">
+          <!-- Test button -->
           <input class="button-primary" type="submit" value="Check!">
         </div>
         <!-- X header -->
         <div class="row">
           <div class="u-full-width">
-            <h1>X</h1>
+            <h1 class="steely"><strong>X</strong></h1>
           </div>
         </div>
-        <!-- Table of Tries -->
-        <table class="u-full-width">
-        <thead>
-          <tr>
-            <th>Number Guessed</th>
-            <th>Power of 3?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="guess">36</td>
-            <td class="guess">Nope</td>
-          </tr>
-        </tbody>
-      </table>
+        <div class="class">
+          <!-- Table of Tries -->
+          <table class="six columns">
+            <thead>
+              <tr>
+                <th>Number Guessed</th>
+                <th>Power of 3?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="guess-num">36</td>
+                <td class="guess-power">Nope</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </form>
     </div>
     <script src="app.js"></script>
