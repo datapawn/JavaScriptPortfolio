@@ -16,7 +16,7 @@ form.addEventListener("submit", checkNum);
 
 // f() checkNum - throws an alert() for an empty form or calls showNumber():
 function checkNum(e) {
-  e.preventDefault(); // not sure this is the best approach?
+  //e.preventDefault(); // not sure this is the best approach?
   if (numberInput.value === "") {
     alert("Type any Integer to test if it's a power of 3");
   } else {
@@ -76,7 +76,7 @@ function listNums(guess, isPower) {
     let newGuess = `<tr><td id='second'>${guess}</td><td>${reply}</td></tr>`;
     let parentRow = document.getElementById("first").parentNode;
     let firstRow = document.getElementById("first");
-    parentRow.insertBefore(newGuess, firstRow);
+    parentRow.insertBefore(parentRow, firstRow);
   } else if (stack === 3) {
     //somehow insertBefore();
   } else if (stack === 4) {
