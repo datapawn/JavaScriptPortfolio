@@ -23,9 +23,9 @@
         <div class="row">
           <!-- Enter field -->
           <div class="six columns">
-            <label for="numberinput">Enter a number: </label>
+            <label for="number-input">Enter a number: </label>
             <input
-              id="numberinput"
+              id="number-input"
               class="u-full-width"
               type="number"
               placeholder="integers only please"
@@ -33,30 +33,27 @@
             />
           </div>
         </div>
+        <!-- Test button -->
         <div class="row">
-          <!-- Test button -->
-          <input class="button-primary" type="submit" value="Check!">
+          <input class="button-primary" type="button" value="Check!">
         </div>
         <!-- X header -->
         <div class="row">
           <div class="u-full-width">
-            <h1 class="steely"><strong>X</strong></h1>
+            <h1 class="steely-blue" id="guess"><strong>#</strong></h1>
           </div>
         </div>
         <div class="class">
           <!-- Table of Tries -->
-          <table class="six columns">
+          <table class='six columns'>
             <thead>
               <tr>
-                <th>Number Guessed</th>
+                <th>Last 3 Numbers Guessed</th>
                 <th>Power of 3?</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td class="guess-num">36</td>
-                <td class="guess-power">Nope</td>
-              </tr>
+            <tbody id="guess-list">
+              
             </tbody>
           </table>
         </div>

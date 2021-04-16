@@ -508,8 +508,16 @@ hr {
   border-top: 1px solid #e1e1e1;
 }
 
-.steely {
+.steely-blue {
   color: #3d6a8f;
+}
+
+.steely-green {
+  color: #129428;
+}
+
+.steely-red {
+  color: #c91515;
 }
 
 /* Clearing

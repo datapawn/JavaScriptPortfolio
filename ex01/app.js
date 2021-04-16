@@ -7,34 +7,31 @@
 
 // Define UI Vars
 const form = document.querySelector("#number-form");
-const numberInput = document.querySelector("#numberinput");
+const numberInput = document.querySelector("#number-input");
+const bigGuess = document.querySelector("#guess");
+const guessList = document.querySelector("#guess-list");
+let recents = [];
 
-// load event listeners
-function loadEventListeners() {
-  // Add task event
-  form.addEventListener("submit", checkNum);
-}
+// event listener is on the 'submit' part of the form.
+form.addEventListener("submit", checkNum);
 
-loadEventListeners();
-
-// f() checkNum - check number that the user inputs:
+// f() checkNum - throws an alert() for an empty form or calls showNumber():
 function checkNum(e) {
+  e.preventDefault(); // not sure this is the best approach?
   if (numberInput.value === "") {
     alert("Type any Integer to test if it's a power of 3");
   } else {
-    //console.log("isinteger");
-    //listNums(numberInput.value);
     if (threePower(1, numberInput.value)) {
-      console.log("true");
-      //showNumber(True, numberInput.value);
+      //console.log("true");
+      showNumber(true, numberInput.value);
     } else {
-      console.log("false");
-      //showNumber(False, numberInput.value);
+      //console.log("false");
+      showNumber(false, numberInput.value);
     }
   }
 }
 
-// f() threePower - check that number is a power of 3:
+// f() threePower - This function uses recurssion to check if the user input is a power of 3:
 function threePower(step, guess) {
   if (guess < 3) {
     return false;
@@ -49,27 +46,43 @@ function threePower(step, guess) {
 }
 
 // f() showNumber - takes in T/F if it is or is not threePower - displays accordingly:
-// function showNumber(isPower, guess) {
-//   if
-// }
+function showNumber(isPower, guess) {
+  if (isPower === true) {
+    //color is Green!
+    document.getElementById("guess").className = "steely-green";
+  } else {
+    //color is Red!
+    document.getElementById("guess").className = "steely-red";
+  }
+  bigGuess.innerHTML = `<strong>${guess}</strong>`;
+  listNums(guess, isPower);
+}
 
 // f() listNums - displays the recent 3 guesses you've done:
-function listNums() {
-  // Create td element
-  const td = document.createElement("td");
-  // Add class
-  td.className = "guess";
-  // Create text node and append to li
-  td.appendChild(document.createTextNode(checkNum.value));
-
-  // Append td to tr in tbody
-  taskList.appendChild(li);
-
-  // Store in LS
-  storeTaskInLocalStorage(taskInput.value);
-
-  // Clear input
-  taskInput.value = "";
-
-  e.preventDefault();
+function listNums(guess, isPower) {
+  let reply;
+  if (isPower === true) {
+    reply = "Yep.";
+  } else {
+    reply = "Nope.";
+  }
+  //let recents = [];
+  let stack = recents.unshift(guess);
+  console.log(stack);
+  if (stack === 1) {
+    guessList.innerHTML = `<tr><td id='first'>${guess}</td><td>${reply}</td></tr>`;
+  } else if (stack === 2) {
+    //console.log("through");
+    //somehow insertBefore();
+    let newGuess = `<tr><td id='second'>${guess}</td><td>${reply}</td></tr>`;
+    let parentRow = document.getElementById("first").parentNode;
+    let firstRow = document.getElementById("first");
+    parentRow.insertBefore(newGuess, firstRow);
+  } else if (stack === 3) {
+    //somehow insertBefore();
+  } else if (stack === 4) {
+    recents.pop();
+    //somehow insertBefore();
+  }
+  numberInput.value = "";
 }
