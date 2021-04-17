@@ -4,6 +4,8 @@
 // Hint: you might want to use recursion for this, which we haven't talked about yet. Exciting!
 // 3, 9, 27, 81...
 
+"use strict";
+
 // Define UI Vars
 const form = document.querySelector("#number-form");
 const numberInput = document.querySelector("#number-input");
@@ -16,7 +18,7 @@ form.addEventListener("submit", checkNum);
 
 // f() checkNum - throws an alert() for an empty form or calls showNumber():
 function checkNum(e) {
-  //e.preventDefault(); // not sure this is the best approach?
+  e.preventDefault(); // not sure this is the best approach?  It's the only way i could find to stop the Form from refreshing the page and killing my HTML edits.
   if (numberInput.value === "") {
     alert("Type any Integer to test if it's a power of 3");
   } else {
@@ -59,29 +61,21 @@ function showNumber(isPower, guess) {
 
 // f() listNums - displays the recent 3 guesses you've done:
 function listNums(guess, isPower) {
+  // reply converts T/F values to "yep"/"nope" strings
   let reply;
   if (isPower === true) {
     reply = "Yep.";
   } else {
     reply = "Nope.";
   }
-  //let recents = [];
-  let stack = recents.unshift(guess);
-  console.log(stack);
-  if (stack === 1) {
-    guessList.innerHTML = `<tr><td id='first'>${guess}</td><td>${reply}</td></tr>`;
-  } else if (stack === 2) {
-    //console.log("through");
-    //somehow insertBefore();
-    let newGuess = `<tr><td id='second'>${guess}</td><td>${reply}</td></tr>`;
-    let parentRow = document.getElementById("first").parentNode;
-    let firstRow = document.getElementById("first");
-    parentRow.insertBefore(parentRow, firstRow);
-  } else if (stack === 3) {
-    //somehow insertBefore();
-  } else if (stack === 4) {
-    recents.pop();
-    //somehow insertBefore();
-  }
+  // create the row:
+  let row = `<tr><td>${guess}</td><td>${reply}</td></tr>`;
+  // get current table as-is:
+  let guesswork = row + guessList.innerHTML;
+  // add new guess to guesswork:
+  guessList.innerHTML = guesswork;
+  // delete the fourth table row:
+  guessList.deleteRow(3);
+
   numberInput.value = "";
 }
