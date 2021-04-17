@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Skeleton CSS cdn stuff -->
+    <link rel="stylesheet" href="assets/skeleton.css"></link>
+    <!-- favicon -->
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="assets/Graypawn Logo Just The Pawn_favcon.png"
+    />
+    <title>Powers of Three</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Powers of Three</h2>
+      <p>This application will tell you if a number is a power of three.</p>
+      <!-- NUMBER FORM -->
+      <form id="number-form">
+        <div class="row">
+          <!-- Enter field -->
+          <div class="six columns">
+            <label for="number-input">Enter a number: </label>
+            <input
+              id="number-input"
+              class="u-full-width"
+              type="number"
+              placeholder="integers only please"
+              min="1"
+            />
+          </div>
+        </div>
+        <!-- Check/Submit button -->
+        <div class="row">
+          <input class="button-primary" type="button" value="Check!">
+        </div>
+        <!-- # header -->
+        <div class="row">
+          <div class="u-full-width">
+            <h1 class="steely-blue" id="guess"><strong>#</strong></h1>
+          </div>
+        </div>
+        <div class="class">
+          <!-- Table of Tries -->
+          <table class='six columns'>
+            <thead>
+              <tr>
+                <th>Last 3 Numbers Guessed</th>
+                <th>Power of 3?</th>
+              </tr>
+            </thead>
+            <tbody id="guess-list">
+              <!-- mini table of 3 most recent guesses added here -->
+            </tbody>
+          </table>
+        </div>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
