@@ -75,7 +75,10 @@ function listNums(guess, isPower) {
   // add new guess to guesswork:
   guessList.innerHTML = guesswork;
   // delete the fourth table row:
-  guessList.deleteRow(3);
+  let lastListed = guessList.getElementsByTagName("tr");
+  if (lastListed.length == 4) {
+    guessList.deleteRow(3);
+  }
 
   numberInput.value = "";
 }
