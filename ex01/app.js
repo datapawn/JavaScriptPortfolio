@@ -9,14 +9,14 @@
 // Define UI Vars
 const form = document.querySelector("#number-form");
 const numberInput = document.querySelector("#number-input");
-const numberButton = document.querySelector("#number-button");
+//const numberButton = document.querySelector("#number-button");
 const bigGuess = document.querySelector("#guess");
 const guessList = document.querySelector("#guess-list");
 let recents = [];
 
 // event listener is on the 'submit' part of the form.
 form.addEventListener("submit", checkNum);
-numberButton.addEventListener("click", checkNum);
+//numberButton.addEventListener("click", checkNum);
 
 // f() checkNum - throws an alert() for an empty form or calls showNumber():
 function checkNum(e) {
