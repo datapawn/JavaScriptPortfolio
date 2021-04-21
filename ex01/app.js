@@ -9,12 +9,14 @@
 // Define UI Vars
 const form = document.querySelector("#number-form");
 const numberInput = document.querySelector("#number-input");
+//const numberButton = document.querySelector("#number-button");
 const bigGuess = document.querySelector("#guess");
 const guessList = document.querySelector("#guess-list");
 let recents = [];
 
 // event listener is on the 'submit' part of the form.
 form.addEventListener("submit", checkNum);
+//numberButton.addEventListener("click", checkNum);
 
 // f() checkNum - throws an alert() for an empty form or calls showNumber():
 function checkNum(e) {
@@ -75,7 +77,10 @@ function listNums(guess, isPower) {
   // add new guess to guesswork:
   guessList.innerHTML = guesswork;
   // delete the fourth table row:
-  guessList.deleteRow(3);
+  let lastListed = guessList.getElementsByTagName("tr");
+  if (lastListed.length == 4) {
+    guessList.deleteRow(3);
+  }
 
   numberInput.value = "";
 }
