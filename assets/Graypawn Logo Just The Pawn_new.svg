@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 360 360" style="enable-background:new 0 0 360 360;" xml:space="preserve">
+<style type="text/css">
+	.Arched_x0020_Green{fill:url(#SVGID_1_);stroke:#FFFFFF;stroke-width:0.25;stroke-miterlimit:1;}
+	.st0{fill:#939598;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="360" x2="0.7071" y2="359.2929">
+	<stop  offset="0" style="stop-color:#20AC4B"/>
+	<stop  offset="0.9831" style="stop-color:#19361A"/>
+</linearGradient>
+<path class="st0" d="M224.2,79.2c0,23.9-19.8,43.2-44.2,43.2c-24.4,0-44.2-19.3-44.2-43.2c0-23.9,19.8-43.2,44.2-43.2
+	C204.4,36,224.2,55.3,224.2,79.2z"/>
+<path class="st0" d="M248,266.4h-14.4c0,0-20.3-23.2-24.4-51c-4.1-27.8,0-42.6,0-42.6h29.6L225,129.6H135l-13.9,43.2h29.6
+	c0,0,4.1,14.8,0,42.6c-4.1,27.8-24.4,51-24.4,51H112L99,324h162L248,266.4z"/>
+</svg>
